@@ -2,7 +2,7 @@ import { Broker } from "./broker.js";
 import * as fs from 'fs';
 import {Stock} from "./stock.js";
 
-const DB_FILE = '/home/toa/WebstormProjetcs/wallstreet-serv/db.json';
+const DB_FILE = '/home/toa/WebstormProjetcs/wallstreet-serv-sockets/db.json';
 
 export class StockExchange {
     
@@ -61,8 +61,9 @@ export class StockExchange {
         return this.stocks[id];
     }
 
-    addStock(name, distributionLaw, maxToChange, startPrice) {
-        let stock = new Stock(name, distributionLaw, maxToChange, startPrice);
+    addStock(name, amount, distributionLaw, maxToChange, startPrice) {
+        let stock = new Stock(name, distributionLaw, amount, maxToChange, startPrice);
+        console.log(startPrice);
         this.stocks[stock.id] = stock;
         this.save();
     }

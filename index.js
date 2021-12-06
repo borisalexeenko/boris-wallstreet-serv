@@ -1,9 +1,8 @@
 import express from 'express';
 import { router } from './api-routing.js';
 import bodyParser from "body-parser";
-import cors from 'cors'
 
-export const app = express();
+export var app = express();
 
 
 app.use(express.json());
@@ -18,7 +17,7 @@ app.use((req, res, next) => {
 
 // мидлвейр для роутинга
 app.use('/', router);
-const PORT = process.env.PORT ?? 3000;
+const PORT = process.env.PORT ?? 3300;
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)

@@ -7,5 +7,14 @@ export class Broker {
         this.name = name;
         this.resources = resources;
         this.imageURL = imageURL;
+        this.amount = 0;
+    }
+
+    setBoughtStocks(boughtStocks) {
+        this['boughtStocks'] = boughtStocks;
+    }
+
+    plusAmount(plus){
+        this['amount'] += plus;
     }
 }
